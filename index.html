@@ -1,4 +1,22 @@
 <!DOCTYPE html>
+<?php
+// Kullanıcının IP adresini al
+$ip = $_SERVER['REMOTE_ADDR'];
+
+// Log dosyasının yolu
+$log_dosyasi = 'ip_log.txt';
+
+// IP'yi dosyaya ekleyerek kaydet
+file_put_contents($log_dosyasi, $ip . "\n", FILE_APPEND);
+
+// Belirli bir süre içinde aynı IP çok fazla giriş yaparsa engelle
+$ip_sayac = array_count_values(file($log_dosyasi, FILE_IGNORE_NEW_LINES));
+if ($ip_sayac[$ip] > 10) { // Örneğin, 10'dan fazla istek yapanları engelle
+    file_put_contents("blacklist.txt", $ip . "\n", FILE_APPEND); // IP'yi kara listeye ekle
+    die("Erişiminiz engellendi!"); // Kullanıcıya sayfa yüklenmesini durdur
+}
+?>
+
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
