@@ -1,23 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KF96T9PG');</script>
-<!-- End Google Tag Manager -->
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HC7D6R36CP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-HC7D6R36CP');
-</script>
-  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Denizli Çilingir Anahtar Servisi</title>
@@ -119,6 +102,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <p>Kasa anahtarı değişimi yapıyoruz.</p>
         <img src="images/cilingir1.jpg" alt="Çilingir kilit açma hizmeti">
     </section>
+    
+    <form action="gonder.php" method="POST">
+        <label>Adınız:</label>
+        <input type="text" name="ad" required>
+        
+        <label>Telefon:</label>
+        <input type="tel" name="telefon" required>
+        
+        <!-- Google reCAPTCHA -->
+        <div class="g-recaptcha" data-sitekey="6LdEvs0qAAAAAB8xEZD7iyJmxuGSvAu6qSA8KrEM"></div>
+        
+        <button type="submit">Gönder</button>
+    </form>
     
     <footer>
         <p>&copy; 2025 Denizli Çilingir Anahtar Servisi</p>
