@@ -1,5 +1,14 @@
 <!DOCTYPE html>
-<!-- Google tag (gtag.js) -->
+<html lang="tr">
+<head>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KF96T9PG');</script>
+<!-- End Google Tag Manager -->
+  <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HC7D6R36CP"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -8,33 +17,7 @@
 
   gtag('config', 'G-HC7D6R36CP');
 </script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KF96T9PG');</script>
-<!-- End Google Tag Manager -->
-<?php
-// Kullanıcının IP adresini al
-$ip = $_SERVER['REMOTE_ADDR'];
-
-// Log dosyasının yolu
-$log_dosyasi = 'ip_log.txt';
-
-// IP'yi dosyaya ekleyerek kaydet
-file_put_contents($log_dosyasi, $ip . "\n", FILE_APPEND);
-
-// Belirli bir süre içinde aynı IP çok fazla giriş yaparsa engelle
-$ip_sayac = array_count_values(file($log_dosyasi, FILE_IGNORE_NEW_LINES));
-if ($ip_sayac[$ip] > 10) { // Örneğin, 10'dan fazla istek yapanları engelle
-    file_put_contents("blacklist.txt", $ip . "\n", FILE_APPEND); // IP'yi kara listeye ekle
-    die("Erişiminiz engellendi!"); // Kullanıcıya sayfa yüklenmesini durdur
-}
-?>
-
-<html lang="tr">
-<head>
+  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Denizli Çilingir Anahtar Servisi</title>
@@ -101,6 +84,12 @@ if ($ip_sayac[$ip] > 10) { // Örneğin, 10'dan fazla istek yapanları engelle
             text-decoration: none;
         }
     </style>
+    <script>
+        // Basit bir bot tespiti
+        if (!navigator.userAgent || navigator.userAgent.length < 20) {
+            document.body.innerHTML = "Erişim Engellendi!";
+        }
+    </script>
 </head>
 <body>
     <header>
