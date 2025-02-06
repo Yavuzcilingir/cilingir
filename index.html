@@ -2,27 +2,27 @@
 <html lang="tr">
 <head>
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KF96T9PG');</script>
-<!-- End Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KF96T9PG');</script>
+  <!-- End Google Tag Manager -->
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HC7D6R36CP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-HC7D6R36CP');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HC7D6R36CP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HC7D6R36CP');
+  </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Denizli Çilingir Anahtar Servisi</title>
     <link rel="stylesheet" href="style.css">
+    <!-- reCAPTCHA API -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <!-- Google Tag Manager -->
+    <!-- Google Tag Manager (ikinci) -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -82,6 +82,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             font-weight: bold;
             text-decoration: none;
         }
+        /* Basit form stilleri */
+        .contact {
+            padding: 20px;
+            background: #f9f9f9;
+            margin: 20px;
+        }
+        .contact form {
+            display: inline-block;
+            text-align: left;
+            max-width: 500px;
+            width: 100%;
+        }
+        .contact label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .contact button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
     </style>
     <script>
         // Basit bir bot tespiti
@@ -110,12 +139,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <p>En uygun barelden en son barele kadar elimizde yüzlerce çeşit barel ve anahtar bulunmaktadır. Apartman ve bina çilingir hizmetlerimiz yanında kapı hidroliği değişimi ve otomatik kapı montajı yapmaktayız.</p>
     </section>
     
+    <!-- İletişim Formu (reCAPTCHA entegre) -->
+    <section class="contact">
+        <h2>İletişim</h2>
+        <form action="form-gonder.php" method="POST">
+            <label>Adınız:</label>
+            <input type="text" name="ad" required>
+            
+            <label>E-posta:</label>
+            <input type="email" name="email" required>
+            
+            <label>Mesajınız:</label>
+            <textarea name="mesaj" required></textarea>
+            
+            <!-- Google reCAPTCHA widget (Site Anahtarı kullanılarak) -->
+            <div class="g-recaptcha" data-sitekey="6LcHuc4qAAAAAORf5yBD7b3ufYcUg7qitg_Wdklt"></div>
+            
+            <button type="submit">Gönder</button>
+        </form>
+    </section>
+    
     <footer>
         <p>&copy; 2025 Denizli Çilingir Anahtar Servisi</p>
     </footer>
     
     <div class="call-button">
         <a href="tel:+905538788428">📞 TELEFON</a>
+    </div>
+</body>
+</html>
+
     </div>
 </body>
 </html>
